@@ -16,6 +16,7 @@ export default function Expenses(props) {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
+  
 
   return (
     <Card className="expenses">
@@ -24,7 +25,7 @@ export default function Expenses(props) {
         onFilterChange={filterChangeHandler}
       />
       <ExpensesChart expenses={filteredExpenses}/>
-      <ExpensesList items={filteredExpenses}/>
+      <ExpensesList items={filteredExpenses} setExpenses={props.setExpenses}/>
     </Card>
   );
 }
